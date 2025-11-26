@@ -1,0 +1,199 @@
+.resource-list {
+  background: var(--panel);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resource-header h1,
+.resource-header h2 {
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.resource-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.pagination-info {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.patient-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.patient-list-panel {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.patient-detail-panel h2 {
+  margin-bottom: 12px;
+}
+
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patient-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.patient-list-item.selected {
+  border-color: #007bff;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.1);
+}
+
+.patient-select {
+  flex: 1;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.patient-name {
+  font-weight: 600;
+  color: #222;
+}
+
+.patient-meta {
+  color: #666;
+  font-size: 13px;
+}
+
+.patient-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.appointments-section {
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .patient-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-actions {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .resource-list {
+    padding: 16px;
+  }
+
+  .resource-header h1,
+  .resource-header h2 {
+    font-size: 20px;
+  }
+
+  .resource-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .patient-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patient-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-list-item {
+    padding: 12px;
+  }
+
+  .patient-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px;
+  }
+
+  .patient-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}
